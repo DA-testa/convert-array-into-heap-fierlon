@@ -35,6 +35,7 @@ def main():
         data = list(map(int, input().split()))
     elif "F" in text:
         filename = input("Enter filename: ")
+        print(filename)
         with open(filename, "r") as f:
             n = int(f.readline())
             data = list(map(int, f.readline().split()))
