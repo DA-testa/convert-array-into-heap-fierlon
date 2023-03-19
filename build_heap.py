@@ -34,8 +34,8 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
     elif "F" in text:
-        file_name = input("Enter filename: ")
-        file_path='./test/'
+        file_name = input("Enter filename: ").strip()
+        file_path='./tests/'
         file_full_name = file_path+file_name
         with open(file_full_name, "r") as f:
             n = int(f.readline())
