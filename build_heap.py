@@ -26,8 +26,15 @@ def build_heap(data):
 
 
 def main():
-    n = int(input())
-    data = list(map(int, input().split()))
+    text = input("F or I: ")
+    if "I" in text:
+        n = int(input())
+        data = list(map(int, input().split()))
+    elif "F" in text:
+        filename = input("Enter filename: ")
+        with open(filename, "r") as f:
+            n = int(f.readline())
+            data = list(map(int, f.readline().split()))
     assert len(data) == n
     swaps = build_heap(data)
     print(len(swaps))
