@@ -4,7 +4,7 @@
 def build_heap(data):
     swaps = []
     n = len(data)
-    
+
     def rec_heapify(i):
         nonlocal swaps
         min_index = i
@@ -21,9 +21,12 @@ def build_heap(data):
             swaps.append((i, min_index))
             data[i], data[min_index] = data[min_index], data[i]
             rec_heapify(min_index)
-            
-    return swaps
 
+
+    for i in range(n//2, -1, -1):
+        rec_heapify(i)
+
+    return swaps
 
 def main():
     text = input("F or I: ")
