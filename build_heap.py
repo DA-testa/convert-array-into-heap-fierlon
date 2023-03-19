@@ -34,9 +34,10 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
     elif "F" in text:
-        filename = input("Enter filename: ")
-        print("file"+filename)
-        with open(filename, "r") as f:
+        file_name = input("Enter filename: ")
+        file_path='./test/'
+        file_full_name = file_path+file_name
+        with open(file_full_name, "r") as f:
             n = int(f.readline())
             data = list(map(int, f.readline().split()))
     assert len(data) == n
